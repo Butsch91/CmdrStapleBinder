@@ -95,13 +95,13 @@ function fcnRefreshAllStapleCount() {
           ListCardName = '';
           ListCardCount = 0;
           
-          // LOOPS THROUGH EVERY CARD IN THE DECKLIST TAB
-          for (var ListCol = 1; ListCol <= ListMaxCol; ListCol++) {
+          // LOOPS THROUGH EVERY CARD IN THE DECKLIST TAB  : ListMaxCol
+          for (var ListCol = 2; ListCol <= ListMaxCol; ListCol++) {
             
             ListDeckName = ListSht.getRange(1, ListCol).getValue();
             ListDeckStapleNb = ListSht.getRange(2, ListCol).getValue();
             
-            for (var ListRow = 1; ListRow <= ListDeckStapleNb; ListRow++) {
+            for (var ListRow = 3; ListRow <= ListDeckStapleNb + 2; ListRow++) {
               ListCardName = ListSht.getRange(ListRow, ListCol).getValue();
               if (ListCardName == CardName) {
                 ListCardCount++;
